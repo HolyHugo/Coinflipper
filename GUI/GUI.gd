@@ -25,10 +25,10 @@ func _ready():
 
 func updateCounters(ressource,type):
 	if(type == "wood"):
-		$WoodCounter/WoodAmount.text = str(ressource)
+		$WoodControl/WoodCounter/WoodAmount.text = str(ressource)
 		$ControlCoin/FlipCoin.texture_normal = woodCoin
 	else:
-		$RockCounter/RockAmount.text = str(ressource)
+		$RockControl/RockCounter/RockAmount.text = str(ressource)
 		$ControlCoin/FlipCoin.texture_normal = rockCoin
 
 func _on_FlipCoin_button_up():
@@ -57,7 +57,7 @@ func _on_WoodButton_button_up():
 		woodPrice = stepify((woodPrice * 1.15),0.001)
 		updateCounters(wood_counter,"wood")
 		updatePrices(woodPrice,"wood")
-		
+		updateBonus(woodMultiplier,"wood")
 
 func _on_RockButton_button_up():
 	if(rock_counter >= rockPrice):
@@ -66,10 +66,17 @@ func _on_RockButton_button_up():
 		rockPrice = stepify((rockPrice * 1.15),0.001)
 		updateCounters(rock_counter,"rock")
 		updatePrices(rockPrice,"rock")
+		updateBonus(rockMultiplier,"rock")
 
 func updatePrices(price,type):
 	if(type == "wood"):
-		$WoodUpgradeBox/WoodPrice.text = str(price)
+		$WoodControl/WoodUpgradeBox/WoodPrice.text = str(price)
 	else:
-		$RockUpgradeBox/RockPrice.text = str(price)
-		
+		$RockControl/RockUpgradeBox/RockPrice.text = str(price)
+
+func updateBonus(bonus,type):
+	if(type == "wood"):
+		$WoodControl/WoodBonusBox/WoodBonus.text = str(bonus)
+	else:
+		$RockControl/RockBonusBox/RockBonus.text = str(bonus)
+	
