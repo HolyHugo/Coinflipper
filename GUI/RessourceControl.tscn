@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GUI/RessourceControl.gd" type="Script" id=1]
+
+[node name="ResourceControl" type="Control"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 48.0
+margin_top = -72.0
+margin_right = 208.0
+margin_bottom = -8.0
+script = ExtResource( 1 )
+
+[node name="ResourceBonusBox" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -24.0
+margin_bottom = 24.0
+
+[node name="+" type="Label" parent="ResourceBonusBox"]
+margin_top = 5.0
+margin_right = 8.0
+margin_bottom = 19.0
+text = "+"
+
+[node name="ResourceBonus" type="Label" parent="ResourceBonusBox"]
+margin_left = 12.0
+margin_top = 5.0
+margin_right = 20.0
+margin_bottom = 19.0
+text = "1"
+
+[node name="ResourceUpgradeBox" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -82.0
+margin_top = -24.0
+margin_right = 82.0
+
+[node name="ResourceButton" type="Button" parent="ResourceUpgradeBox"]
+margin_right = 20.0
+margin_bottom = 24.0
+text = "+"
+
+[node name="ResourceUpgrade" type="Label" parent="ResourceUpgradeBox"]
+margin_left = 24.0
+margin_top = 5.0
+margin_right = 106.0
+margin_bottom = 19.0
+text = "Upgrade for :"
+
+[node name="ResourcePrice" type="Label" parent="ResourceUpgradeBox"]
+margin_left = 110.0
+margin_top = 5.0
+margin_right = 126.0
+margin_bottom = 19.0
+text = "10"
+
+[node name="ResourceCounter" type="HBoxContainer" parent="."]
+margin_right = 57.0
+margin_bottom = 24.0
+alignment = 1
+
+[node name="Resource" type="Label" parent="ResourceCounter"]
+margin_top = 5.0
+margin_right = 97.0
+margin_bottom = 19.0
+text = "ResourceName"
+align = 1
+
+[node name="ResourceAmount" type="Label" parent="ResourceCounter"]
+margin_left = 101.0
+margin_top = 5.0
+margin_right = 109.0
+margin_bottom = 19.0
+text = "0"
+
+[connection signal="button_up" from="ResourceUpgradeBox/ResourceButton" to="." method="_on_ResourceButton_button_up"]

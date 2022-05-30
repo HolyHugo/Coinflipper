@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GUI/Upgrade.gd" type="Script" id=1]
+
+[node name="Upgrade" type="Control"]
+margin_right = 96.0
+margin_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+UpgradeName = "Test"
+UpgradeCost = 10
+
+[node name="UpgradeColor" type="ColorRect" parent="."]
+margin_right = 96.0
+margin_bottom = 32.0
+color = Color( 0.0627451, 0.0509804, 0.0509804, 0.564706 )
+
+[node name="UpgradeButton" type="Button" parent="UpgradeColor"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 96.0
+margin_bottom = 32.0
+
+[node name="UpgradeName" type="Label" parent="UpgradeColor"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 94.0
+margin_bottom = 18.0
+text = "UpgradeName"
+align = 1
+
+[node name="UpgradeCost" type="Label" parent="UpgradeColor"]
+margin_left = 54.0
+margin_top = 16.0
+margin_right = 94.0
+margin_bottom = 30.0
+text = "0"
+align = 1
+
+[connection signal="button_up" from="UpgradeColor/UpgradeButton" to="." method="_on_UpgradeButton_button_up"]
