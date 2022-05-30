@@ -44,3 +44,4 @@ func waitForAnim(newCoin):
 func _on_FaithTimer_timeout():
 	$FaithControl.counterUp()
 	$FaithControl.updateCounters()
+

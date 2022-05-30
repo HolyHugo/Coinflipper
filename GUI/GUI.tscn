@@ -29,17 +29,42 @@ length = 0.001
 [node name="GUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -8.0
 script = ExtResource( 2 )
+
+[node name="Midle" type="ColorRect" parent="."]
+margin_top = 352.0
+margin_right = 1024.0
+margin_bottom = 416.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.14902, 0.14902, 0.14902, 1 )
+
+[node name="LeftColumn" type="ColorRect" parent="."]
+anchor_bottom = 1.0
+margin_right = 192.0
+margin_bottom = 16.0
+color = Color( 0.14902, 0.14902, 0.14902, 1 )
+
+[node name="RightColumn" type="ColorRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -192.0
+margin_bottom = 16.0
+color = Color( 0.14902, 0.14902, 0.14902, 1 )
 
 [node name="ControlCoin" type="Control" parent="."]
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.853
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.853
 margin_left = -32.0
-margin_top = -88.0
+margin_top = -31.8
 margin_right = 8.0
-margin_bottom = -48.0
+margin_bottom = 8.19998
 __meta__ = {
 "_edit_group_": true
 }
@@ -69,22 +94,26 @@ margin_right = 44.0
 margin_bottom = 44.0
 texture_normal = ExtResource( 3 )
 
-[node name="RightColumn" type="ColorRect" parent="."]
-margin_left = 832.0
-margin_right = 1024.0
-margin_bottom = 608.0
-color = Color( 0.14902, 0.14902, 0.14902, 1 )
-
 [node name="RockControl" parent="." instance=ExtResource( 4 )]
-margin_left = 336.0
-margin_right = 496.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 848.0
+margin_top = 432.0
+margin_right = 1008.0
+margin_bottom = 496.0
 resourceLabel = "Rocks"
 
 [node name="WoodControl" parent="." instance=ExtResource( 4 )]
-margin_left = 336.0
-margin_top = -152.0
-margin_right = 496.0
-margin_bottom = -88.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 848.0
+margin_top = 512.0
+margin_right = 1008.0
+margin_bottom = 576.0
 resourceLabel = "Wood"
 
 [node name="FaithControl" parent="." instance=ExtResource( 4 )]
@@ -100,11 +129,6 @@ wait_time = 2.0
 __meta__ = {
 "_editor_description_": "Faith Timer"
 }
-
-[node name="LeftColumn" type="ColorRect" parent="."]
-margin_right = 192.0
-margin_bottom = 608.0
-color = Color( 0.14902, 0.14902, 0.14902, 1 )
 
 [node name="Miner" parent="." instance=ExtResource( 5 )]
 margin_left = 48.0
@@ -127,13 +151,6 @@ margin_right = 144.0
 margin_bottom = 576.0
 UpgradeName = "First Follower"
 
-[node name="Midle" type="ColorRect" parent="."]
-margin_left = 192.0
-margin_top = 352.0
-margin_right = 832.0
-margin_bottom = 416.0
-color = Color( 0.14902, 0.14902, 0.14902, 1 )
-
 [node name="MainScreen" type="ColorRect" parent="."]
 margin_left = 192.0
 margin_right = 832.0
@@ -143,3 +160,4 @@ color = Color( 0.843137, 0.843137, 0.843137, 1 )
 
 [connection signal="button_up" from="ControlCoin/FlipCoin" to="." method="_on_FlipCoin_button_up"]
 [connection signal="timeout" from="FaithTimer" to="." method="_on_FaithTimer_timeout"]
+[connection signal="gui_input" from="Miner" to="." method="_on_Miner_gui_input"]

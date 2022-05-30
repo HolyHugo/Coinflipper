@@ -10,4 +10,4 @@ func _ready():
 	initialization()
 
 func _on_UpgradeButton_button_up():
-	print("Hello")
+	print("hello")
