@@ -106,26 +106,26 @@ margin_right = 192.0
 margin_bottom = 608.0
 color = Color( 0.14902, 0.14902, 0.14902, 1 )
 
-[node name="FirstFollower" parent="." instance=ExtResource( 5 )]
-margin_left = 48.0
-margin_top = 560.0
-margin_right = 144.0
-margin_bottom = 592.0
-UpgradeName = "First Follower"
-
-[node name="LumberJack" parent="." instance=ExtResource( 5 )]
-margin_left = 48.0
-margin_top = 512.0
-margin_right = 144.0
-margin_bottom = 544.0
-UpgradeName = "LumberJack"
-
 [node name="Miner" parent="." instance=ExtResource( 5 )]
 margin_left = 48.0
-margin_top = 464.0
+margin_top = 448.0
 margin_right = 144.0
-margin_bottom = 496.0
+margin_bottom = 480.0
 UpgradeName = "Miner"
+
+[node name="Lumberjack" parent="." instance=ExtResource( 5 )]
+margin_left = 48.0
+margin_top = 496.0
+margin_right = 144.0
+margin_bottom = 528.0
+UpgradeName = "Lumberjack"
+
+[node name="First Follower" parent="." instance=ExtResource( 5 )]
+margin_left = 48.0
+margin_top = 544.0
+margin_right = 144.0
+margin_bottom = 576.0
+UpgradeName = "First Follower"
 
 [node name="Midle" type="ColorRect" parent="."]
 margin_left = 192.0
@@ -133,6 +133,13 @@ margin_top = 352.0
 margin_right = 832.0
 margin_bottom = 416.0
 color = Color( 0.14902, 0.14902, 0.14902, 1 )
+
+[node name="MainScreen" type="ColorRect" parent="."]
+margin_left = 192.0
+margin_right = 832.0
+margin_bottom = 352.0
+rect_pivot_offset = Vector2( 272, 320 )
+color = Color( 0.843137, 0.843137, 0.843137, 1 )
 
 [connection signal="button_up" from="ControlCoin/FlipCoin" to="." method="_on_FlipCoin_button_up"]
 [connection signal="timeout" from="FaithTimer" to="." method="_on_FaithTimer_timeout"]

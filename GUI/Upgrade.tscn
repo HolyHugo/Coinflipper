@@ -19,6 +19,8 @@ UpgradeCost = 10
 [node name="UpgradeColor" type="ColorRect" parent="."]
 margin_right = 96.0
 margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 color = Color( 0.0627451, 0.0509804, 0.0509804, 0.564706 )
 
 [node name="UpgradeButton" type="Button" parent="UpgradeColor"]
@@ -35,11 +37,18 @@ text = "UpgradeName"
 align = 1
 
 [node name="UpgradeCost" type="Label" parent="UpgradeColor"]
-margin_left = 54.0
+margin_left = 13.0
 margin_top = 16.0
-margin_right = 94.0
+margin_right = 53.0
 margin_bottom = 30.0
 text = "0"
 align = 1
+
+[node name="UpgradeFaith" type="Label" parent="UpgradeColor"]
+margin_left = 53.0
+margin_top = 16.0
+margin_right = 93.0
+margin_bottom = 30.0
+text = "faith"
 
 [connection signal="button_up" from="UpgradeColor/UpgradeButton" to="." method="_on_UpgradeButton_button_up"]
